@@ -61,10 +61,18 @@ public class FormatString {
 				} else {
 					if (am % 2 == 0) {
 						if (pt.charAt(tg - 1) == '*' || pt.charAt(tg - 1) == '/' || pt.charAt(tg - 1) == '(') {
-							pt = pt.substring(0, tg) + "(1-0)*" + pt.substring(i, pt.length());
+							if(pt.charAt(tg-1)=='/') {
+								pt = pt.substring(0, tg) + "(1-0)/" + pt.substring(i, pt.length());
+							}else {
+								pt = pt.substring(0, tg) + "(1-0)*" + pt.substring(i, pt.length());
+							}
 							i = tg + 5;
 						} else {
-							pt = pt.substring(0, tg) + "+(1-0)*" + pt.substring(i, pt.length());
+							if(pt.charAt(tg-1)=='/') {	
+								pt = pt.substring(0, tg) + "+(1-0)/" + pt.substring(i, pt.length());
+							}else {
+								pt = pt.substring(0, tg) + "+(1-0)*" + pt.substring(i, pt.length());
+							}
 							i = tg + 6;
 						}
 					} else {
