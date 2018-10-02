@@ -33,8 +33,9 @@ public class Process {
 	}
 
 	public ArrayList<Object> getKQ(String pt) {
+		FormatString f = new FormatString();
 		try {
-			tinh(pt, k);
+			tinh(f.formatString(pt), k);
 		} catch (Exception e) {
 			arKQ.add(false);
 			return arKQ;
@@ -47,110 +48,6 @@ public class Process {
 	public double tinh(String s, KQ k) {
 		double kq = 0;
 		for (int i = 0; i < s.length(); i++) {
-			// Khong co ky tu phu hop
-			if (s.charAt(i) < 48 && s.charAt(i) > 57 && dau.indexOf("" + s.charAt(i)) == -1) {
-				k.setTinhDuoc(false);
-				return 0;
-			}
-
-			// doan them
-			// xu ly so am duong
-			if (s.charAt(i) == '+' || s.charAt(i) == '-') {
-				if (i + 1 < s.length()) {
-					if (s.charAt(i + 1) >= 48 && s.charAt(i + 1) <= 57) {
-						if (i == 0) {
-							if (s.charAt(i) == '+') {
-								s = s.substring(1, s.length());
-							} else {
-								s = "(0-1)*" + s.substring(1, s.length());
-							}
-							i--;
-							continue;
-						} else if (s.charAt(i - 1) == '(') {
-							if (s.charAt(i) == '+') {
-								s = s.substring(0, i) + "(1-0)*" + s.substring(i + 1, s.length());
-							} else {
-								s = s.substring(0, i) + "(0-1)*" + s.substring(i + 1, s.length());
-							}
-							i--;
-							continue;
-						}
-					}
-				}
-				int am = 0;
-				int dg = 0;
-				int t = i;
-				while (s.charAt(t) == '+' || s.charAt(t) == '-') {
-					if (s.charAt(t) == '+')
-						dg++;
-					else
-						am++;
-					t++;
-					if (t == s.length()) {
-						k.tinhDuoc = false;
-						return 0;
-					}
-				}
-				if (s.charAt(t) == '*' || s.charAt(t) == '/' || s.charAt(t) == ')') {
-					k.tinhDuoc = false;
-					return 0;
-				}
-				if (am + dg > 1) {
-					if (am % 2 == 1) {
-						if (i == 0) {
-							s = s.substring(0, i) + "(0-1)*" + s.substring(t, s.length());
-						} else if (s.charAt(i - 1) == '(') {
-							s = s.substring(0, i) + "(0-1)*" + s.substring(t, s.length());
-						} else
-							s = s.substring(0, i) + "+(0-1)*" + s.substring(t, s.length());
-					} else {
-						if (i == 0) {
-							s = s.substring(0, i) + "(1-0)*" + s.substring(t, s.length());
-						} else if (s.charAt(i - 1) == '(') {
-							s = s.substring(0, i) + "(1-0)*" + s.substring(t, s.length());
-						} else
-							s = s.substring(0, i) + "+(1-0)*" + s.substring(t, s.length());
-					}
-				}
-
-			} else if (s.charAt(i) == '*' || s.charAt(i) == '/') {
-				String kyT ="*";
-				int am = 0;
-				int dg = 0;
-				int t = i + 1;
-				
-				if(s.charAt(i)=='/') {
-					kyT = "/";
-				}
-				if (s.charAt(t) == '+' || s.charAt(t) == '-') {
-					while (s.charAt(t) == '+' || s.charAt(t) == '-') {
-						if (s.charAt(t) == '+')
-							dg++;
-						else
-							am++;
-						t++;
-						if (t == s.length()) {
-							k.tinhDuoc = false;
-							return 0;
-						}
-					}
-					if (s.charAt(t) == ')') {
-						k.tinhDuoc = false;
-						return 0;
-					}
-				} else if (s.charAt(t) == '*' || s.charAt(t) == '/') {
-					k.tinhDuoc = false;
-					return 0;
-				}
-//				if (am + dg > 1) {
-				if (am % 2 == 1) {
-					s = s.substring(0, i) + "*(0-1)"+kyT + s.substring(t, s.length());
-				} else {
-					s = s.substring(0, i) + kyT + s.substring(t, s.length());
-				}
-//				}
-			}
-
 			// truong hop la so
 			if (s.charAt(i) >= 48 && s.charAt(i) <= 57) {
 				String so = "";
@@ -226,9 +123,10 @@ public class Process {
 
 				toanTu.remove(toanTu.size() - 1);
 			}
-
-			// trg hop do uu tien nho hon hoac bang
+			// do uu tien nhon hon hoac bang
 			if (s.charAt(i) != '(' && s.charAt(i) != ')') {
+
+				System.out.println(s.charAt(i));
 				double dut1 = doUT.get(dau.indexOf(s.charAt(i) + ""));
 				double s1, s2;
 				double dut0 = doUT.get(dau.indexOf(toanTu.get(toanTu.size() - 1)));
@@ -263,7 +161,7 @@ public class Process {
 				toanTu.add(s.charAt(i) + "");
 			}
 		}
-
+		// buoc cuoi va kiem tra dung sai
 		while (toanHang.size() != 1) {
 			double s1, s2;
 			String tt = toanTu.get(toanTu.size() - 1);
@@ -297,6 +195,7 @@ public class Process {
 		} else {
 			k.setTinhDuoc(false);
 		}
+
 		k.setKQ(kq);
 		return kq;
 	}
