@@ -5,5 +5,7 @@
     <string name="hello_world">Hello world!</string>
     <string name="len">&lt;&lt;</string>
     <string name="xuong">&gt;&gt;</string>
+    <color name="btnBG">#1e1e1e</color>
+    <color name="btbCT">#d34610</color>
 
 </resources>

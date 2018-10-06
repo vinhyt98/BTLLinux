@@ -10,7 +10,7 @@
         android:id="@+id/pt"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="10"
+        android:layout_weight="12"
         android:background="@drawable/cutom_border2"
         android:gravity="center_vertical"
         android:paddingLeft="14dp"
@@ -19,7 +19,7 @@
 
     <TextView 
         android:id="@+id/kq"
-        android:layout_weight="10"
+        android:layout_weight="12"
         android:layout_height="0dp"
         android:layout_width="match_parent"
         android:background="@drawable/custom_border"
@@ -28,17 +28,26 @@
         android:paddingLeft="14dp"
         android:paddingRight="14dp"
         />
+    <LinearLayout 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="8"
+        android:background="#5a5a5a"
+        android:gravity="center_vertical|center_horizontal">
+        
+        
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="80"
+        android:layout_weight="68"
         android:orientation="vertical"
         android:background="@drawable/custom_border3" >
         
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_weight="20"
+            android:layout_weight="13.5"
             android:weightSum="100"
             android:layout_height="0dp"
             android:orientation="horizontal"
@@ -51,6 +60,8 @@
                 android:layout_weight="23"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             
             <Button 
@@ -59,6 +70,8 @@
                 android:layout_weight="23"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             
             <Button 
@@ -67,6 +80,8 @@
                 android:layout_weight="23"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             
             <Button 
@@ -75,12 +90,14 @@
                 android:layout_weight="23"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
         </LinearLayout>
         
         
         <LinearLayout android:layout_width="match_parent"
-            android:layout_weight="20"
+            android:layout_weight="13.5"
             android:weightSum="100"
             android:layout_height="0dp"
             android:orientation="horizontal"
@@ -94,6 +111,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="1"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/bt2" 
@@ -101,6 +120,8 @@
                 android:layout_weight="22"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/bt3" 
@@ -109,6 +130,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="25dp"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/btdel" 
@@ -116,6 +139,8 @@
                 android:layout_weight="15"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
 
             <Button
@@ -123,12 +148,14 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="15"
                 android:layout_width="0dp"
-                android:text="C" />
+                android:text="C"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG" />
            
         </LinearLayout>
         
         <LinearLayout android:layout_width="match_parent"
-            android:layout_weight="20"
+            android:layout_weight="13.5"
             android:weightSum="100"
             android:layout_height="0dp"
             android:gravity="center_vertical|center_horizontal"
@@ -140,6 +167,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="4"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/bt5" 
@@ -147,6 +176,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="22"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/bt6" 
@@ -155,6 +186,8 @@
                 android:layout_weight="22"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="25dp"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/btco" 
@@ -162,6 +195,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="15"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/bttr" 
@@ -169,13 +204,15 @@
                 android:layout_width="0dp"
                 android:layout_weight="15"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
            
             
         </LinearLayout>
         
         <LinearLayout android:layout_width="match_parent"
-            android:layout_weight="20"
+            android:layout_weight="13.5"
             android:layout_height="0dp"
             android:weightSum="100"
             android:gravity="center_vertical|center_horizontal"
@@ -187,6 +224,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:text="7"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/bt8" 
@@ -194,6 +233,8 @@
                 android:layout_weight="22"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/bt9" 
@@ -201,6 +242,8 @@
                 android:layout_weight="22"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 android:layout_marginRight="25dp"
                 />
             <Button
@@ -209,6 +252,8 @@
                 android:layout_weight="15"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             <Button
                 android:id="@+id/btch" 
@@ -216,13 +261,15 @@
                 android:layout_weight="15"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
            
             	
         </LinearLayout>
         
         <LinearLayout android:layout_width="match_parent"
-            android:layout_weight="20"
+            android:layout_weight="13.5"
             android:weightSum="100"
             android:layout_height="0dp"
             android:gravity="center_vertical|center_horizontal"
@@ -234,6 +281,8 @@
                 android:layout_weight="45"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             
             <Button
@@ -243,6 +292,8 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginRight="25dp"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             
             <Button
@@ -251,6 +302,8 @@
                 android:layout_width="0dp"
                 android:layout_weight="30"
                 android:layout_height="wrap_content"
+                android:textColor="@color/btbCT"
+                android:backgroundTint="@color/btnBG"
                 />
             
         </LinearLayout>
