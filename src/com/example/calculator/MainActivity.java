@@ -2,17 +2,17 @@ package com.example.calculator;
 
 import java.util.ArrayList;
 
-import android.app.ActionBar.LayoutParams;
+//import android.app.ActionBar.LayoutParams;
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
 import android.view.View;
 import android.view.View.OnClickListener;
-import android.view.ViewTreeObserver;
+//import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.TextView;
-import android.widget.Toast;
+//import android.widget.Toast;
 import process.Process;
 
 public class MainActivity extends Activity implements OnClickListener {

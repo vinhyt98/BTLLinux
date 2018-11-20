@@ -69,7 +69,7 @@ public class Process {
 					}
 				}
 				if (i + 1 < s.length()) {
-					if (flag && s.charAt(i + 1) == ')') {
+					if (flag && s.charAt(i + 1) == ')') { //neu co dong mo ngoac vd  1+(3) -> 1+3 bo 2 ca ngoac thua di
 						if (i + 2 < s.length()) {
 							s = s.substring(0, tg) + s.substring(tg + 1, i + 1) + s.substring(i + 2, s.length());
 						} else {
@@ -80,12 +80,13 @@ public class Process {
 				toanHang.add(Double.parseDouble(so));
 				continue;
 			}
-
+			//stack rong hoac toan tu la ( thi auto them
 			if (toanTu.size() == 0 || s.charAt(i) == '(') {
 				toanTu.add(s.charAt(i) + "");
 				continue;
 			}
-
+			
+			//neu dinh stack la ( cx auto them
 			if (toanTu.get(toanTu.size() - 1).equals("(")) {
 				toanTu.add(s.charAt(i) + "");
 				continue;
