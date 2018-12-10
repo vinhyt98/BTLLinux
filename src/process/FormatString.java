@@ -9,23 +9,19 @@ public class FormatString {
 					if (pt.charAt(i + 1) == '-') {
 						if (i == 0) {
 							pt = "(0" + pt.substring(1, pt.length());
-//							i = 1;
 						} else if (i + 1 < pt.length()) {
 							pt = pt.substring(0, i + 1) + "0" + pt.substring(i + 1, pt.length());
 							System.out.println(pt);
-//							i = i + 1;
 						}
 						continue;
 					}
 				}
 				if (i == 0) {
 					pt = "(0+" + pt.substring(1, pt.length());
-//					i = 2;
 					i = 1;
 				} else if (i + 1 < pt.length()) {
 					pt = pt.substring(0, i + 1) + "0+" + pt.substring(i + 1, pt.length());
 					System.out.println(pt);
-//					i = i + 2;
 					i++;
 				}
 				continue;
@@ -33,13 +29,6 @@ public class FormatString {
 
 			// xu ly am duong
 			if (pt.charAt(i) == '-' || pt.charAt(i) == '+') {
-				// de fix loi tren doan su ly nhap nhieu ngoac
-//				if(i-1>=0) {
-//					if(pt.charAt(i-1)=='+'||pt.charAt(i-1)=='-') {
-//						i-=2;
-//						continue;
-//					}
-//				}//
 				int am = 0, tg = i;
 				if (pt.charAt(i) == '-')
 					am = 1;
@@ -70,11 +59,7 @@ public class FormatString {
 							}
 							i = tg + 5;
 						} else { // neu truoc do la so
-//							if(pt.charAt(tg-1)=='/') {	
-//								pt = pt.substring(0, tg) + "+(1-0)/" + pt.substring(i, pt.length());
-//							}else {
 							pt = pt.substring(0, tg) + "+(1-0)*" + pt.substring(i, pt.length());
-//							}
 							i = tg + 6;
 						}
 					} else {

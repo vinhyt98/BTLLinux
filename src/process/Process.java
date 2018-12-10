@@ -14,8 +14,8 @@ public class Process {
 		arKQ = new ArrayList();
 		toanTu = new ArrayList<String>();
 		toanHang = new ArrayList<Double>();
-		dau = new ArrayList<String>();
-		doUT = new ArrayList<Double>();
+		dau = new ArrayList<String>(); //dau
+		doUT = new ArrayList<Double>(); //do uu tien
 
 		doUT.add(0d);
 		doUT.add(0d);
@@ -104,14 +104,14 @@ public class Process {
 					toanHang.remove(toanHang.size() - 1);
 					if (tt.equals("+")) {
 						toanHang.add(s1 + s2);
-					}
+					} 
 					if (tt.equals("-")) {
 						toanHang.add(s2 - s1);
 					}
 					if (tt.equals("*")) {
 						toanHang.add(s1 * s2);
 					}
-					if (tt.equals("/")) {
+					if (tt.equals("/")) { 
 						try {
 							toanHang.add(s2 / s1);
 						} catch (Exception e) {
